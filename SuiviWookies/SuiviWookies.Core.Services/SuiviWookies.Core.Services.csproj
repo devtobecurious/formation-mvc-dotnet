@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SuiviWookies.Core.Models\SuiviWookies.Core.Models.csproj" />
-    <ProjectReference Include="..\SuiviWookies.Core.Services\SuiviWookies.Core.Services.csproj" />
   </ItemGroup>
 
 </Project>

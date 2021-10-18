@@ -1,0 +1,33 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Prénom</th>
+            <th>Taille</th>
+            <th>Date de naissance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var item in ViewBag.List)*@
+        @foreach (var item in Model.Wookies)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Surname
+                </td>
+                <td>
+                    @item.Size
+                </td>
+                <td>
+                    @item.Birthday.ToString("dd/MM/yyyy")
+                    @( item.Birthday.Year + " / " + item.Birthday.Month )
+                    @( $" {item.Birthday.Year} / {item.Birthday.Month} " )
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,35 +1,76 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@*@model List<Wookie>*@
+
+@model WookiesViewModel
+
 @{
-    List<Wookie> list = new List<Wookie>()
-     {
-         new Wookie(),
-         new Wookie()
-     };
+    //List<Wookie> list = new List<Wookie>()
+    // {
+    //     new Wookie(),
+    //     new Wookie()
+    // };
+
+    var list = this.ViewData["MA_LIST"];
+    var weaponItems = this.Model.Weapons.Select(item => new SelectListItem() { Text = item.Label, Value = item.Id.ToString() });
 }
 
 <h1>Naissances des wookies</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Prénom</th>
-            <th>Taille</th>
-            <th>Date de naissance</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in list)
-        {
+<h2>Filtres</h2>
+@foreach (var weapon in this.Model.Weapons)
+{
+    <div>@weapon.Label</div>
+}
+
+@Html.DropDownListFor(item => item.WeaponId, weaponItems)
+<select asp-for="WeaponId" asp-items="weaponItems"></select>
+
+
+
+@if (Model.Wookies != null && Model.Wookies.Count > 0)
+{
+    //@Html.Partial("WookieList")
+    <partial name="WookieList" />
+
+    <!--<table>
+        <thead>
             <tr>
-                <td>
-                    1
-                </td>
+                <th>Id</th>
+                <th>Prénom</th>
+                <th>Taille</th>
+                <th>Date de naissance</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>-->
+    @*@foreach (var item in ViewBag.List)*@
+    <!--@foreach (var item in Model.Wookies)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Surname
+            </td>
+            <td>
+                @item.Size
+            </td>
+            <td>
+                @item.Birthday.ToString("dd/MM/yyyy")
+                @( item.Birthday.Year + " / " + item.Birthday.Month )
+                @( $" {item.Birthday.Year} / {item.Birthday.Month} " )
+            </td>
+        </tr>
+    }
+            
+</tbody>
+</table>-->
+} 
+else
+{
+ <i>Aucune donnée</i>
+}
 
 
