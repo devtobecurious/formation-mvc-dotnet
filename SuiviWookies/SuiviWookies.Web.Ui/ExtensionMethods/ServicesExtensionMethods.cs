@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SuiviWookies.Core.Interfaces;
+using SuiviWookies.Core.Interfaces.Services;
+using SuiviWookies.Core.Models;
 using SuiviWookies.Core.Services;
 using System;
 using System.Collections.Generic;
@@ -16,6 +19,9 @@ namespace SuiviWookies.Web.Ui.ExtensionMethods
             //> unique dans l'appli services.AddSingleton<WookieService>();
             // services.Add()
             //services.AddTransient<WookieService>();
+
+            services.AddScoped<IBirthService, BirthService>();
+            services.AddScoped<ICityService<City>, CityService>();
             services.AddScoped<WookieService>();
 
             return services;

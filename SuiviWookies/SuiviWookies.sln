@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuiviWookies.Core.Models", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuiviWookies.Tests.Web", "SuiviWookies.Tests.Web\SuiviWookies.Tests.Web.csproj", "{908B4D1F-BE7B-48E5-AA8C-C7B272D8FD82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuiviWookies.Core.Interfaces", "SuiviWookies.Core.Interfaces\SuiviWookies.Core.Interfaces.csproj", "{BA93430D-CCC4-4BBD-9C7D-7FE679F720A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{908B4D1F-BE7B-48E5-AA8C-C7B272D8FD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{908B4D1F-BE7B-48E5-AA8C-C7B272D8FD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{908B4D1F-BE7B-48E5-AA8C-C7B272D8FD82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA93430D-CCC4-4BBD-9C7D-7FE679F720A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA93430D-CCC4-4BBD-9C7D-7FE679F720A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA93430D-CCC4-4BBD-9C7D-7FE679F720A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA93430D-CCC4-4BBD-9C7D-7FE679F720A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

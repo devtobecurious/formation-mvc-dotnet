@@ -1,8 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\NewFile.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Models\NewFile.txt" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SuiviWookies.Core.Models\SuiviWookies.Core.Models.csproj" />
