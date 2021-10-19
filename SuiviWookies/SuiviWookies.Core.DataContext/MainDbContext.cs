@@ -27,11 +27,13 @@ namespace SuiviWookies.Core.DataContext
             modelBuilder.Entity<City>().HasKey(item => item.Id);
 
             modelBuilder.ApplyConfiguration(new WookieTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new WeaponEntityTypeConfiguration());
             // modelBuilder.ApplyConfigurationsFromAssembly(typeof(MainDbContext).Assembly);
         }
 
 
         public DbSet<Wookie> Wookies { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
         public DbSet<City> Cities { get; set; }
     }
 }

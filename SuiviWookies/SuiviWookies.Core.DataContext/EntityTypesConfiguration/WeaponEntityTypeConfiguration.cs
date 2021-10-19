@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace SuiviWookies.Core.DataContext.EntityTypesConfiguration
 {
-    public class WookieTypeConfiguration : IEntityTypeConfiguration<Wookie>
+    public class WeaponEntityTypeConfiguration : IEntityTypeConfiguration<Weapon>
     {
         #region Public methods
-        public void Configure(EntityTypeBuilder<Wookie> builder)
+        public void Configure(EntityTypeBuilder<Weapon> builder)
         {
-            
-            builder.HasKey(item => item.Id);
+            builder.ToTable("Weapon");
         }
         #endregion
     }

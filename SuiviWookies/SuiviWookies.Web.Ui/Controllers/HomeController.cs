@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SuiviWookies.Core.DataContext;
 using SuiviWookies.Web.Ui.Models;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace SuiviWookies.Web.Ui.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            // INTERDIT !!! var list = query.ToList().Where(item => item;
         }
 
         public IActionResult Index()

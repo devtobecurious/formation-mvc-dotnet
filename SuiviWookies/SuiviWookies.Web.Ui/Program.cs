@@ -24,6 +24,13 @@ namespace SuiviWookies.Web.Ui
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    
+
+                    webBuilder.Configure(configure =>
+                    {
+                        
+                    });
+
                     webBuilder.UseStartup<Startup>();
                 });
     }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SuiviWookies.Core.DataContext\SuiviWookies.Core.DataContext.csproj" />
     <ProjectReference Include="..\SuiviWookies.Core.Interfaces\SuiviWookies.Core.Interfaces.csproj" />
     <ProjectReference Include="..\SuiviWookies.Core.Models\SuiviWookies.Core.Models.csproj" />
   </ItemGroup>
