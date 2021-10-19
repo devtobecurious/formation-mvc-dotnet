@@ -5,6 +5,7 @@ using SuiviWookies.Core.DataContext;
 using SuiviWookies.Core.Interfaces;
 using SuiviWookies.Core.Interfaces.Services;
 using SuiviWookies.Core.Models;
+using SuiviWookies.Core.Models.Configuration;
 using SuiviWookies.Core.Services;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace SuiviWookies.Web.Ui.ExtensionMethods
             //services.AddTransient<WookieService>();
 
             string connectionString = configuration.GetConnectionString("StarWarsDatabase");
+
+            services.Configure<GameConfiguration>(configuration.GetSection("Game"));
 
             services.AddDbContext<MainDbContext>(options =>
             {

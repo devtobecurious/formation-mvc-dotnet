@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using SuiviWookies.Core.DataContext;
+using SuiviWookies.Core.Models.Configuration;
 using SuiviWookies.Web.Ui.Models;
 using System;
 using System.Collections.Generic;
@@ -14,8 +17,19 @@ namespace SuiviWookies.Web.Ui.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, 
+                              IConfiguration configuration, 
+                              IOptions<GameConfiguration> gameOptions)
         {
+            int minXP = int.Parse(configuration["Game:XPmin"]);
+
+            var conf = configuration.GetSection("Game").Get<GameConfiguration>(option =>
+            {
+                
+            });
+
+            var conf2 = gameOptions.Value;
+
             _logger = logger;
             // INTERDIT !!! var list = query.ToList().Where(item => item;
         }

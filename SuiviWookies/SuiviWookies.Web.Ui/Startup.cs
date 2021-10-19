@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SuiviWookies.Web.Ui.ExtensionMethods;
+using SuiviWookies.Core.Models.Configuration;
 
 namespace SuiviWookies.Web.Ui
 {
@@ -25,6 +26,8 @@ namespace SuiviWookies.Web.Ui
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string xpMin = this.Configuration["Game:XPmin"];
+
             services.AddInjectionDependencies(this.Configuration)
                     .AddControllersWithViews();
         }
@@ -32,6 +35,8 @@ namespace SuiviWookies.Web.Ui
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            var conf = this.Configuration.GetSection("Game").Get<GameConfiguration>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
