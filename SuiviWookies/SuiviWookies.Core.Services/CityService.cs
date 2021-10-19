@@ -1,4 +1,5 @@
 ﻿using SuiviWookies.Core.Interfaces;
+using SuiviWookies.Core.Interfaces.Services;
 using SuiviWookies.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace SuiviWookies.Core.Services
     public class CityService : ICityService<City>
     {
         #region Fields
-        private readonly BirthService _birthService = null;
+        private readonly IBirthService _birthService = null;
         #endregion
 
         #region Constructors
-        public CityService(BirthService service)
+        public CityService(IBirthService service)
         {
             this._birthService = service;
         }

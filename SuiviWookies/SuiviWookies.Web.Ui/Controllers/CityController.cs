@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SuiviWookies.Core.Interfaces;
 using SuiviWookies.Core.Models;
 using SuiviWookies.Core.Services;
 using SuiviWookies.Web.Ui.Models;
@@ -12,11 +13,11 @@ namespace SuiviWookies.Web.Ui.Controllers
     public class CityController : Controller
     {
         #region Fields
-        private readonly CityService _service;
+        private readonly ICityService<City> _service;
         #endregion
 
         #region Constructors
-        public CityController(CityService service)
+        public CityController(ICityService<City> service)
         {
             this._service = service;
         }
