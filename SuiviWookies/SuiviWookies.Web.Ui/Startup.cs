@@ -25,7 +25,7 @@ namespace SuiviWookies.Web.Ui
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddInjectionDependencies()
+            services.AddInjectionDependencies(this.Configuration)
                     .AddControllersWithViews();
         }
 
