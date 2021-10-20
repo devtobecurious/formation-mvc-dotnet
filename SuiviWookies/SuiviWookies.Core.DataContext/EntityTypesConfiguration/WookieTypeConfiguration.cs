@@ -13,8 +13,7 @@ namespace SuiviWookies.Core.DataContext.EntityTypesConfiguration
     {
         #region Public methods
         public void Configure(EntityTypeBuilder<Wookie> builder)
-        {
-            
+        {            
             builder.HasKey(item => item.Id);
         }
         #endregion

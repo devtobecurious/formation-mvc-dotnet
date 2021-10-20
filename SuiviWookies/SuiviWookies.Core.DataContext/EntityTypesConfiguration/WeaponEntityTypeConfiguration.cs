@@ -15,7 +15,6 @@ namespace SuiviWookies.Core.DataContext.EntityTypesConfiguration
         public void Configure(EntityTypeBuilder<Weapon> builder)
         {
             builder.ToTable("Weapon");
-               
         }
         #endregion
     }
