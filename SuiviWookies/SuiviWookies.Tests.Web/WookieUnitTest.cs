@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 using Xunit;
 
@@ -8,7 +9,9 @@ namespace SuiviWookies.Tests.Web
         [Fact]
         public void ShouldRun()
         {
-            SuiviWookies.Web.Ui.Controllers.WookiesController controller = new(new Core.Services.WookieService());
+            var builder = new DbContextOptionsBuilder();
+
+            SuiviWookies.Web.Ui.Controllers.WookiesController controller = new(new Core.Services.WookieService(new Core.DataContext.MainDbContext(builder.Options)));
             Assert.NotNull(controller);
         }
     }
