@@ -15,6 +15,8 @@ namespace SuiviWookies.Core.Models
         public DateTime Birthday { get; set; }
 
         public float Size { get; set; }
+
+        public Weapon MainWeapon { get; set; }
         #endregion
     }
 }
