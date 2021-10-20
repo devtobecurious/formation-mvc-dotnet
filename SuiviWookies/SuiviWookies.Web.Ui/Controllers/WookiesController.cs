@@ -73,5 +73,19 @@ namespace SuiviWookies.Web.Ui.Controllers
 
             return View("Index", viewModel);
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(WookieViewModel viewModel)
+        {
+            await this._service.Save(viewModel.Wookie);
+
+            return this.View();
+        }
     }
 }

@@ -1,0 +1,19 @@
+﻿@model WookieViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Nouvelle naissance</h1>
+
+<form asp-action="Add" asp-controller="Wookie" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input asp-for="Surname" id="Surname" aria-describedby="surnameHelp" class="form-control">
+        <small id="surnameHelp" class="form-text text-muted">Des infos sur le surname</small>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Déclarer</button>
+</form>
