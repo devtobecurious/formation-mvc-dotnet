@@ -35,5 +35,7 @@ namespace SuiviWookies.Core.DataContext
         public DbSet<Wookie> Wookies { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
         public DbSet<City> Cities { get; set; }
+
+        public DbSet<Tribute> Tributes { get; set; }
     }
 }

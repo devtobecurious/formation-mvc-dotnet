@@ -36,6 +36,7 @@ namespace SuiviWookies.Web.Ui.ExtensionMethods
             services.AddScoped<IBirthService, BirthService>();
             services.AddScoped<IWeaponService<Weapon>, WeaponService>();
             services.AddScoped<ICityService<City>, CityService>();
+            services.AddScoped<ITributeService<Tribute>, TributeService>();
             services.AddScoped<WookieService>();
 
             return services;

@@ -1,6 +1,7 @@
 ﻿using SuiviWookies.Core.Interfaces;
 using SuiviWookies.Core.Interfaces.Services;
 using SuiviWookies.Core.Models;
+using SuiviWookies.Core.Models.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,11 @@ namespace SuiviWookies.Core.Services
             }
 
             return cities;
+        }
+
+        public IList<City> GetAll(GridConfiguration gridConfiguration)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

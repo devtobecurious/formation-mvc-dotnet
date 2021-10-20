@@ -4,35 +4,43 @@ using SuiviWookies.Core.Models;
 using SuiviWookies.Core.Models.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SuiviWookies.Core.Services
 {
-    public class WeaponService : IWeaponService<Weapon>
+    public class TributeService : ITributeService<Tribute>
     {
         #region Fields
         private readonly MainDbContext _context;
         #endregion
 
         #region Constructors
-        public WeaponService([NotNullAttribute] MainDbContext context)
+        public TributeService(MainDbContext context)
         {
             this._context = context;
         }
         #endregion
 
         #region Public methods
-        public IList<Weapon> GetAll()
+        public IList<Tribute> GetAll()
         {
-            return this._context.Weapons.ToList();
+            IList<Tribute> list = new List<Tribute>()
+            {
+                new Tribute(),
+                new Tribute()
+            };
+
+            return list;
         }
 
-        public IList<Weapon> GetAll(GridConfiguration gridConfiguration)
+        public IList<Tribute> GetAll(GridConfiguration gridConfiguration)
         {
-            throw new NotImplementedException();
+            var query = from item in this._context.Tributes
+                        select item;
+
+            return query.Take(gridConfiguration.Size).ToList();
         }
         #endregion
     }
