@@ -61,18 +61,19 @@ namespace SuiviWookies.Web.Ui
                 //    // return httpContext.Response.w
                 //});
 
-                endpoints.MapControllerRoute(
-                    name: "onewookie",
-                    pattern: "wookie/{id?}",
-                    constraints: new { id = @"\d" },
-                    defaults: new { controller = "Wookies", action = "Edit" }
-                );
+                //endpoints.MapControllerRoute(
+                //    name: "onewookie",
+                //    pattern: "wookie/{id?}",
+                //    constraints: new { id = @"\d" },
+                //    defaults: new { controller = "Wookies", action = "Edit" }
+                //);
 
-                endpoints.MapControllerRoute(
-                    name: "thewookies",
-                    pattern: "les-wookies/{search:regex(*)}/{index:maxlength(2)}/{page:int}",
-                    defaults: new { controller = "Wookies", action = "Index2" }
-                );
+                //endpoints.MapControllerRoute(
+                //    name: "thewookies",
+                //    // pattern: "les-wookies/{search:regex(*)}/{index:maxlength(2)}/{page:int}",
+                //    pattern: "les-wookies",
+                //    defaults: new { controller = "Wookies", action = "Index2" }
+                //);
 
                 endpoints.MapControllerRoute(
                     name: "default",
