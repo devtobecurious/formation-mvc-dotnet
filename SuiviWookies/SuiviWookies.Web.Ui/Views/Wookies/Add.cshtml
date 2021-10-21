@@ -8,12 +8,21 @@
 
 <h1>Nouvelle naissance</h1>
 
-<form asp-action="Add" asp-controller="Wookie" method="post">
+<form asp-action="Add" asp-controller="Wookies" method="post">
+    <i>Test</i>
+    <div asp-validation-summary="All"></div>
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input asp-for="Surname" id="Surname" aria-describedby="surnameHelp" class="form-control">
         <small id="surnameHelp" class="form-text text-muted">Des infos sur le surname</small>
+
+        <span asp-validation-for="Surname"></span>
     </div>
     
     <button type="submit" class="btn btn-primary">Déclarer</button>
 </form>
+
+@section scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

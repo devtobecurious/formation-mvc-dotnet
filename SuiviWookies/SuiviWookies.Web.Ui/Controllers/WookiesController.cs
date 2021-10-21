@@ -83,9 +83,26 @@ namespace SuiviWookies.Web.Ui.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(WookieViewModel viewModel)
         {
-            await this._service.Save(viewModel.Wookie);
+            if (this.ModelState.IsValid)
+            {
+                // this.ModelState.AddModelError()
+
+                await this._service.Save(viewModel.Wookie);
+            }
 
             return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult IsValidSurname(WookieViewModel model)
+        {
+            return this.Json(false);
+        }
+
+        [HttpPost]
+        public IActionResult IsValidSurname2(string surname)
+        {
+            return this.Json(false);
         }
     }
 }
