@@ -56,6 +56,24 @@ namespace SuiviWookies.Web.Ui
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapPost("jedi:regex(^\\d{2}-jedi-.*)", httpContext =>
+                //{
+                //    // return httpContext.Response.w
+                //});
+
+                endpoints.MapControllerRoute(
+                    name: "onewookie",
+                    pattern: "wookie/{id?}",
+                    constraints: new { id = @"\d" },
+                    defaults: new { controller = "Wookies", action = "Edit" }
+                );
+
+                endpoints.MapControllerRoute(
+                    name: "thewookies",
+                    pattern: "les-wookies/{search:regex(*)}/{index:maxlength(2)}/{page:int}",
+                    defaults: new { controller = "Wookies", action = "Index2" }
+                );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

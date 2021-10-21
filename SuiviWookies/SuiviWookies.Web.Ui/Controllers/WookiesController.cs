@@ -53,7 +53,7 @@ namespace SuiviWookies.Web.Ui.Controllers
             return View(list);
         }
 
-        public async Task<IActionResult> Index2()
+        public async Task<IActionResult> Index2(string search, int index, int page)
         {
             List<Weapon> weapons = new List<Weapon>()
             {
@@ -82,6 +82,18 @@ namespace SuiviWookies.Web.Ui.Controllers
             };
 
             return View("Index", viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            ActionResult result = this.View();
+
+            if (id <= 0)
+            {
+                result = this.RedirectToAction("Add", "Wookies");
+            }
+
+            return result;
         }
 
         [HttpGet]
