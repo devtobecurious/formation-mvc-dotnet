@@ -34,6 +34,16 @@ namespace SuiviWookies.Core.Services
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="label"></param>
+        /// <returns></returns>
+        public bool VerifyUnic(string label)
+        {
+            return ! this._context.Weapons.Any(item => item.Label.ToLower() == label.ToLower());
+        }
         #endregion
     }
 }

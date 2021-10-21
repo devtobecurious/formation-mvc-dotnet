@@ -8,6 +8,6 @@ namespace SuiviWookies.Core.Interfaces.Services
 {
     public interface IWeaponService<T> : IBaseService<T> where T:class
     {
-
+        bool VerifyUnic(string label);
     }
 }

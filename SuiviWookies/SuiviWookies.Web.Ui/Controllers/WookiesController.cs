@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SuiviWookies.Core.Interfaces.Services;
 using SuiviWookies.Core.Models;
 using SuiviWookies.Core.Services;
 using SuiviWookies.Web.Ui.Models;
@@ -11,12 +12,21 @@ namespace SuiviWookies.Web.Ui.Controllers
 {
     public class WookiesController : Controller
     {
+        #region Fields
         private readonly WookieService _service;
+        private readonly IWeaponService<Weapon> _weaponService;
+        #endregion
 
-        public WookiesController(WookieService service)
+        #region Constructors
+        public WookiesController(WookieService service,
+                                 IWeaponService<Weapon> weaponService)
         {
             this._service = service;
+            this._weaponService = weaponService;
         }
+        #endregion
+
+        #region Public methods
 
         public IActionResult Index()
         {
@@ -77,7 +87,7 @@ namespace SuiviWookies.Web.Ui.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return this.View();
+            return this.View(this.CreateDefaultViewModel());
         }
 
         [HttpPost]
@@ -90,7 +100,7 @@ namespace SuiviWookies.Web.Ui.Controllers
                 await this._service.Save(viewModel.Wookie);
             }
 
-            return this.View();
+            return this.View(this.CreateDefaultViewModel());
         }
 
         [HttpPost]
@@ -104,5 +114,23 @@ namespace SuiviWookies.Web.Ui.Controllers
         {
             return this.Json(false);
         }
+        #endregion
+
+        #region Internal methods
+        private WookieViewModel CreateDefaultViewModel()
+        {
+            var viewModel = new WookieViewModel()
+            {
+                Weapons = this.GetWeaponList()
+            };
+
+            return viewModel;
+        }
+
+        private IList<Weapon> GetWeaponList()
+        {
+            return this._weaponService.GetAll();
+        }
+        #endregion
     }
 }

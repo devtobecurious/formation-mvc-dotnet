@@ -37,6 +37,8 @@ namespace SuiviWookies.Web.Ui.Models
         public string Surname { get;set; }
 
         public Wookie Wookie { get => this._wookie; }
+
+        public IList<Weapon> Weapons { get; set; }
         #endregion
     }
 }

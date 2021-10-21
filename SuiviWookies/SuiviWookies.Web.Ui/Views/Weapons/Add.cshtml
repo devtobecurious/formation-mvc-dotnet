@@ -1,0 +1,25 @@
+﻿@model WeaponViewModel
+
+<h1>Nouvelle arme</h1>
+
+<form asp-action="Add" asp-controller="Weapons" method="post">
+
+    <div class="form-group">
+        <label for="Label">Libellé</label>
+        <input asp-for="Label" id="Label" class="form-control">
+        <span asp-validation-for="Label"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Label">Puissance</label>
+        <input asp-for="Power" id="Power" class="form-control">
+        <span asp-validation-for="Power"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>
+
+@section scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
