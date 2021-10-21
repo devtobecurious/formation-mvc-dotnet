@@ -84,6 +84,7 @@ cache:
 #
 # Learn more about GitLab cache: https://docs.gitlab.com/ee/ci/caching/index.html
 before_script:
+  - cd SuiviWookies
   - 'dotnet restore --packages $NUGET_PACKAGES_DIRECTORY'
 
 build:
