@@ -7,6 +7,18 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
+<environment include="Development">
+    <div>C'est en dev !</div>
+</environment>
+
+<environment include="Development, Staging">
+    <div>C'est pas en prod !</div>
+</environment>
+
+<environment exclude="Development">
+    <div>C'est pas en dev !</div>
+</environment>
+
 
 @section footer 
 {

@@ -37,7 +37,7 @@ namespace SuiviWookies.Web.Ui
         {
             var conf = this.Configuration.GetSection("Game").Get<GameConfiguration>();
 
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() && env.IsEnvironment("MonEnvironment"))
             {
                 app.UseDeveloperExceptionPage();
             }
