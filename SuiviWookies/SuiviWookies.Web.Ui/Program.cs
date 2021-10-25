@@ -24,7 +24,9 @@ namespace SuiviWookies.Web.Ui
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    
+                    // webBuilder.UseSetting(WebHostDefaults.PreventHostingStartupKey, "true");
+                    // webBuilder.UseSetting(WebHostDefaults.HostingStartupExcludeAssembliesKey, "SuiviWookies.Web.Ui;");
+                    webBuilder.UseSetting(WebHostDefaults.HostingStartupAssembliesKey, "SuiviWookies.Web.Ui;");
 
                     webBuilder.Configure(configure =>
                     {
